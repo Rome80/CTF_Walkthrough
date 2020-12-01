@@ -59,7 +59,16 @@ In this output we obtain the Samba version. So let's find more exploits.
 
 - Searchsploit -t Samba 2 -w
 
-One exploit that outstands from the rest is 
+One exploit that outstands from the rest is the Remote Code Execution.
+
+![100769562-23c3bf80-33f4-11eb-85c4-b1ee0cabdac3](https://user-images.githubusercontent.com/25660910/100771944-e90f5680-33f6-11eb-9d45-87108ef41714.JPG)
+
+Between the several exploits detected we choose the last one. After we download the file, this exploit is .c file, so we have to compile it with the command gcc -o exploit 10 10.c -lcrypto.
+
+
+![1](https://user-images.githubusercontent.com/25660910/100772041-0512f800-33f7-11eb-846e-e2889bd222eb.jpg)
+
+We execute it and then we got root access!
 
 
 
