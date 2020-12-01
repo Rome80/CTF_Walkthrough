@@ -14,7 +14,7 @@ First we are going to use the commandline utility arp-scan to scan our network t
 
 Now that we have our target IP (192.168.1.100), we can take the next step, enumeration and scan open ports. To perform the scan we will use the tool nmap. 
 
-### nmap -A -T4 -p- 192.168.1.100
+#### nmap -A -T4 -p- 192.168.1.100
 
 -A: Turns on the version detection
 
@@ -32,9 +32,9 @@ The scan´s result as we can see shows us that the ports 22 (SSH), 80 (HTTP), 11
 
 And for the next step we will use Nikto! This tool is a very popular web server scanner that performs comprehensive tests againsts web servers for multiple items that will help us to identify the existing vulnerabilities.
 
-#### nikto -h 192.168.1.100
+#### - nikto -h 192.168.1.100
 
-![Capture](https://user-images.githubusercontent.com/25660910/100743697-915ff380-33d4-11eb-9abe-d090a4625bb6.JPG)
+![Capture](https://user-images.githubusercontent.com/25660910/100771294-2b846380-33f6-11eb-9eb4-f5897caa0ca9.JPG)
 
 As we can see, several vulnerabilities were identified. But in this process, the vulnerabilities that we want are those that can be explored remotely. Luckly we have one!
 
@@ -52,7 +52,7 @@ One option the tool nmap provide to us is the hability to run scripts. So we ran
 
 - nmap --script smb-vuln* -p 139 192.168.1.100
 
-![Capture](https://user-images.githubusercontent.com/25660910/100771656-95047200-33f6-11eb-9965-65b13731bd23.JPG)
+![Capture](https://user-images.githubusercontent.com/25660910/100767631-e827f600-33f1-11eb-9ecc-86f5526959f3.JPG)
 
 And we got one exploit for Samba. This exploit allows remote attackers to execute arbitrary code or cause a denial of service (system crash) via an & (ampersand) character in a Process ID High header field in a NEGOTIATE PROTOCOL REQUEST packet.
 In this output we obtain the Samba version. So let's find more exploits.
@@ -61,18 +61,14 @@ In this output we obtain the Samba version. So let's find more exploits.
 
 One exploit that outstands from the rest is the Remote Code Execution.
 
-![100769562-23c3bf80-33f4-11eb-85c4-b1ee0cabdac3](https://user-images.githubusercontent.com/25660910/100771944-e90f5680-33f6-11eb-9d45-87108ef41714.JPG)
+
+![Capture](https://user-images.githubusercontent.com/25660910/100769562-23c3bf80-33f4-11eb-85c4-b1ee0cabdac3.JPG)
 
 Between the several exploits detected we choose the last one. After we download the file, this exploit is .c file, so we have to compile it with the command gcc -o exploit 10 10.c -lcrypto.
 
-
-![1](https://user-images.githubusercontent.com/25660910/100772041-0512f800-33f7-11eb-846e-e2889bd222eb.jpg)
+![1](https://user-images.githubusercontent.com/25660910/100770756-88cbe500-33f5-11eb-827c-b31bdfc581d6.jpg)
 
 We execute it and then we got root access!
-
-
-
-
 
 
 
