@@ -1,10 +1,10 @@
-### Kioptrix - Level 1
+# Kioptrix - Level 1
 
 ## Description
 
 This Kioptrix VM Image are easy challenges. The object of the game is to acquire root access via any means possible (except actually hacking the VM server or player). The purpose of these games are to learn the basic tools and techniques in vulnerability assessment and exploitation. There are more ways then one to successfully complete the challenges.
 
-## Let's Begin
+### Let's Begin
 
 First we are going to use the commandline utility arp-scan to scan our network to discover the target IP address. 
 
@@ -14,7 +14,7 @@ First we are going to use the commandline utility arp-scan to scan our network t
 
 Now that we have our target IP (192.168.1.100), we can take the next step, enumeration and scan open ports. To perform the scan we will use the tool nmap. 
 
-# nmap -A -T4 -p- 192.168.1.100
+### nmap -A -T4 -p- 192.168.1.100
 
 -A: Turns on the version detection
 
@@ -32,13 +32,13 @@ The scan´s result as we can see shows us that the ports 22 (SSH), 80 (HTTP), 11
 
 And for the next step we will use Nikto! This tool is a very popular web server scanner that performs comprehensive tests againsts web servers for multiple items that will help us to identify the existing vulnerabilities.
 
-# nikto -h 192.168.1.100
+#### nikto -h 192.168.1.100
 
 ![Capture](https://user-images.githubusercontent.com/25660910/100743697-915ff380-33d4-11eb-9abe-d090a4625bb6.JPG)
 
 As we can see, several vulnerabilities were identified. But in this process, the vulnerabilities that we want are those that can be explored remotely. Luckly we have one!
 
-# + mod_ssl/2.8.4 - mod_ssl 2.8.7 and lower are vulnerable to a remote buffer overflow which may allow a remote shell
+#### + mod_ssl/2.8.4 - mod_ssl 2.8.7 and lower are vulnerable to a remote buffer overflow which may allow a remote shell
 
 
 
