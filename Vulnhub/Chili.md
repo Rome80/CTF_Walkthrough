@@ -13,11 +13,11 @@ First we are going to use the commandline utility arp-scan to scan our network t
 Now that we have our target IP (192.168.1.112), we can take the next step, enumeration and scan open ports. To perform the scan we will use the tool nmap.
 nmap -A -T4 -p- 192.168.1.112
 
--A: Turns on the version detection
+- A: Turns on the version detection
 
--T4: Agressive scanning
+- T4: Agressive scanning
 
--p-: scan all 65535 ports
+- -p-: scan all 65535 ports
 
 
 ![2](https://user-images.githubusercontent.com/25660910/101018955-25ac9080-3564-11eb-96f9-a874c7cf1ec7.JPG)
