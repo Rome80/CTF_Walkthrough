@@ -1,1 +1,19 @@
 # Basic Penetration Testing
+
+##  Find the services exposed by the machine
+
+root@ip-10-10-205-169:~# nmap -A -T4 -p- 10.10.205.169
+
+PORT     STATE    SERVICE       VERSION
+22/tcp   open     ssh           OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+80/tcp   open     http          WebSockify Python/3.6.9
+111/tcp  open     rpcbind       2-4 (RPC #100000)
+3389/tcp open     ms-wbt-server xrdp
+6001/tcp open     X11           (access denied)
+8000/tcp filtered http-alt
+
+## What is the name of the hidden directory on the web server(enter name without /)?
+
+
+root@ip-10-10-205-169:~# gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-1.0.txt -u 10.10.205.169
+
