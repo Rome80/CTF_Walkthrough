@@ -15,3 +15,25 @@ After that, I searched the value of the copyright field, "OWoodflint". Then i sa
 
 Found this github repositorium /https://github.com/OWoodfl1nt/people_finder) where Oliver says his current location
 
+<img width="636" alt="image" src="https://user-images.githubusercontent.com/25660910/131185085-255997ec-8b78-4250-8123-3d0d2316bba2.png">
+
+## Whats the SSID of the WAP he connected to?
+
+To find the SSID of the WAP (Wireless Access Point), I found a website which through the coordinates and the BSSID (MAC Address), I can know the exact SSID. The SSID is a customizable name given to a WAP. 
+
+First, on Twitter it is published the BSSID
+
+<img width="503" alt="image" src="https://user-images.githubusercontent.com/25660910/131185347-7af7c3e3-ddcf-46c2-adab-cfa8111e95b9.png">
+
+Then also in the metadata of the image (in the first question), we have the coordinates. The website is wigle.net
+
+<img width="1075" alt="image" src="https://user-images.githubusercontent.com/25660910/131186400-107db14c-66bc-4586-b5d7-906cc40eeb52.png">
+
+Zooming in on the marker discloses the SSID of OWoodflint’s WiFi as "UnileverWiFi".
+
+## End
+
+
+
+
+
